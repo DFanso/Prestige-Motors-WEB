@@ -1,0 +1,237 @@
+.about-container {
+    position: relative;
+    width: 100%;
+    height: 87vh;
+    /* Set the height of the container to 95% of the viewport height */
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    /* Set the height of the image to 100% of the container's height */
+    object-fit: cover;
+}
+
+.about-content {
+    position: relative;
+    /* Set the position to relative to contain the absolute element */
+    height: 100%;
+    /* Make sure the .about-content takes up the full height of .about-container */
+}
+
+.about-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    /* Set the text color to ensure it's visible on the image */
+    /* Add a semi-transparent background to enhance text readability */
+    padding: 20px;
+    /* Add padding to the text container for better readability */
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container h1 {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container p {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+    /* Remove margin */
+}
+
+.about-oncover-p {
+    margin-top: 10px;
+}
+
+.contact-us-container {
+    /* margin-top: 35px;
+    margin-bottom: 35px; */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    background-image: url('../../../public/images/form-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-us-left-section {
+    text-align: center;
+    height: 600px;
+    /* You can adjust the height as needed */
+    width: 430px;
+    /* You can adjust the width as needed */
+    position: relative;
+}
+
+.contact-us-left-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.contact-us-left-section .left-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+
+}
+
+.social-contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-follow-p {
+    margin-top: 100px;
+}
+
+.contact-us-left-section h1 {
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+
+.contact-us-left-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
+}
+
+.contact-us-right-section {
+    text-align: center;
+
+    font-family: 'Roboto', sans-serif;
+    background-color: #454545;
+    color: #fff;
+    width: 400px;
+    height: 600px;
+
+}
+
+.contact-us-right-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-top: 45px;
+}
+
+.contact-us-right-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-us-right-section form {
+    display: inline-block;
+    text-align: left;
+}
+
+.contact-us-right-section form div {
+    margin-bottom: 15px;
+}
+
+.contact-us-right-section form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-us-right-section form input,
+.contact-us-right-section form textarea {
+    width: 300px;
+    /*100%*/
+
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-us-right-section form textarea {
+    resize: vertical;
+}
+
+.contact-us-right-section form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us-right-section form button:hover {
+    background-color: grey;
+    transition: 1s;
+}
+
+
+
+
+
+
+/*---------------------------------responsive ------------------------------------------*/
+@media (max-width: 480px) {
+    .contact-us-container {
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+
+    }
+
+    .about-text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-text-container p {
+        font-size: 1.0rem;
+        /* Remove margin */
+    }
+
+    .contact-us-left-section h1 {
+        font-size: 28px;
+    }
+
+    .contact-us-right-section h1 {
+        font-size: 22px;
+    }
+
+    .contact-us-left-section {
+        width: 100%;
+    }
+
+    .contact-us-right-section {
+        width: 100%;
+    }
+
+
+
+
+
+}
