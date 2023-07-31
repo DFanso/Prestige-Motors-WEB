@@ -1,0 +1,115 @@
+.footer-container {
+    background: linear-gradient(to right, #ffffff, #f2f2f2);
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 30px;
+    position: relative;
+    color: #000;
+    /* Add position relative for pseudo-elements */
+}
+
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 18px;
+    color: #14141C;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-column a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: grey;
+}
+
+.footer-column p {
+    font-size: 15px;
+}
+
+.footer-social {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social p {
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+
+}
+
+
+
+
+
+.social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.footer-rights {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.icon {
+    margin-right: 15px;
+    /* Add spacing between the icons */
+}
+
+.icon:hover {
+    color: grey;
+    /* Add spacing between the icons */
+}
+
+
+
+
+/*--------------------  footer responsive---------------- */
+.footer-social p {
+    font-size: 18px;
+    font-weight: normal;
+
+
+}
+
+.footer-column h3 {
+    font-size: 18px;
+}

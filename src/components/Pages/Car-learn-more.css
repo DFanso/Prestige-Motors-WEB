@@ -1,0 +1,324 @@
+.about-container {
+    position: relative;
+    width: 100%;
+    height: 87vh;
+
+    /* Set the height of the container to 95% of the viewport height */
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    /* Set the height of the image to 100% of the container's height */
+    object-fit: cover;
+}
+
+.about-content {
+    position: relative;
+    /* Set the position to relative to contain the absolute element */
+    height: 100%;
+    /* Make sure the .about-content takes up the full height of .about-container */
+}
+
+.about-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    /* Set the text color to ensure it's visible on the image */
+    /* Add a semi-transparent background to enhance text readability */
+    padding: 20px;
+    /* Add padding to the text container for better readability */
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container h1 {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container p {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+    /* Remove margin */
+}
+
+.about-oncover-p {
+    margin-top: 10px;
+}
+
+
+.car-learn-more-bg-con {
+    background-color: #f1f1f1;
+}
+
+
+.car-learn-more {
+
+    padding-top: 50px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-learn-more .car-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px; */
+}
+
+.car-learn-more .car-left-column h1 {
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.car-learn-more-call-box {
+    margin-top: 20px;
+    /* padding: 0px 10px; */
+    width: 40%;
+    height: 12%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.car-learn-more-call-num-box {
+    margin-top: 10px;
+    /* padding: 0px 10px; */
+    width: 40%;
+    height: 12%;
+    border: 2px solid #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-learn-more-call-p {
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+}
+
+.car-learn-more .rectangle-box {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    width: 70%;
+    padding: 10px;
+}
+
+.car-learn-more .car-learn-more-bold-text {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+.car-learn-more-text {
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.car-learn-more .car-right-column {
+    flex: 1;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-learn-more img {
+    max-width: 100%;
+}
+
+.car-learn-more .small-images {
+    display: flex;
+    margin-top: 10px;
+}
+
+.car-learn-more .small-images img {
+    width: 80px;
+    height: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Set a fixed size for the big image */
+.car-learn-more .big-image {
+    max-height: 400px;
+    /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+/* Set a fixed size for the small images */
+.car-learn-more .small-images .small-image {
+    width: 80px;
+    height: 60px;
+}
+
+.car-learn-more-car-des {
+    display: flex;
+    padding-left: 100px;
+    padding-right: 130px;
+    width: 95%;
+}
+
+.car-learn-more-car-des-p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.car-learn-more-car-des-container {
+    margin-top: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@media (max-width: 480px) {
+    .about-text-container h1 {
+        font-size: 2.3rem;
+    }
+
+    .car-learn-more-mobile-p p {
+        font-size: 0.6rem;
+    }
+
+    .about-mission-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-mission-content p {
+        font-size: 14px;
+    }
+
+    .about-mission-content {
+        width: 90%;
+    }
+
+    .car-learn-more {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+
+
+    .car-learn-more-call-box {
+        margin-top: 20px;
+        /* padding: 0px 10px; */
+        width: 150px;
+        padding-left: 8px;
+        padding-right: 8px;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .car-learn-more-call-p {
+        font-weight: lighter;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .car-learn-more .car-left-column h1 {
+        font-size: 33px;
+    }
+
+    .car-learn-more-call-num-box {
+        margin-top: 10px;
+        width: 170px;
+
+    }
+
+    .car-learn-more .rectangle-box {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+
+
+
+    .car-learn-more-car-des {
+        display: flex;
+        padding-left: 20px;
+        padding-right: 40px;
+        width: 105%;
+    }
+
+    .car-learn-more-car-des-p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+
+    }
+
+    .car-learn-more .car-right-column {
+        margin-left: 20px;
+    }
+
+
+}
+
+
+@media (max-width: 912px) {
+
+    /*820*/
+    .car-learn-more {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .car-learn-more-call-box {
+        margin-top: 20px;
+        /* padding: 0px 10px; */
+        width: 180px;
+        padding-left: 8px;
+        padding-right: 8px;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .car-learn-more-call-num-box {
+        margin-top: 10px;
+        width: 170px;
+
+    }
+
+    .car-learn-more .rectangle-box {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+}

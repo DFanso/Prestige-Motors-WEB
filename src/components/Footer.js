@@ -1,0 +1,47 @@
+import React from 'react';
+import './Footer.css'; // Create a CSS file Footer.css and link it here
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+
+const Footer = () => {
+    return (
+        <footer className="footer-container">
+            <div className="footer-row">
+                <div className="footer-column">
+                    <img src="/images/logo.png" alt="Logo" />
+                </div>
+                <div className="footer-column">
+                    <h3>Prestige Motors</h3>
+                    <ul>
+                        <li><a href="#">Page d'accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Vente</a></li>
+                        <li><a href="#">Contactez-nous</a></li>
+                    </ul>
+                </div>
+                <div className="footer-column">
+                    <h3>Information d'entreprise</h3>
+                    <p>Conditions d'utilisation</p>
+                    <p>Politique de confidentialité</p>
+                </div>
+                <div className="footer-column">
+                    <h3>Contactez-nous</h3>
+                    <p>prestigevence@gmail.com</p>
+                    <p>04.93.58.11.87</p>
+                </div>
+            </div>
+            <div className="footer-social">
+
+                <p>Suivez-nous pour plus de contenu exclusif</p>
+                <div className="social-icons">
+                    <FaInstagram size={24} className="icon" /> {/* Adjust the size in pixels as needed */}
+                    <FaFacebook size={24} className="icon" />
+                    <FaTwitter size={24} className="icon" />
+                </div>
+                {/* <hr className="footer-line" /> */}
+            </div>
+            <p className="footer-rights">© 2023 Prestige Motors, Tous droits réservés.</p>
+        </footer>
+    );
+}
+
+export default Footer;

@@ -1,0 +1,329 @@
+.about-container {
+    position: relative;
+    width: 100%;
+    height: 87vh;
+    /* Set the height of the container to 95% of the viewport height */
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    /* Set the height of the image to 100% of the container's height */
+    object-fit: cover;
+}
+
+.about-content {
+    position: relative;
+    /* Set the position to relative to contain the absolute element */
+    height: 100%;
+    /* Make sure the .about-content takes up the full height of .about-container */
+}
+
+.about-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    /* Set the text color to ensure it's visible on the image */
+    /* Add a semi-transparent background to enhance text readability */
+    padding: 20px;
+    /* Add padding to the text container for better readability */
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container h1 {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* Remove margin */
+}
+
+.about-text-container p {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+    /* Remove margin */
+}
+
+.about-oncover-p {
+    margin-top: 10px;
+}
+
+
+.about-mission-container {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-mission-content {
+    text-align: center;
+    width: 70%;
+}
+
+.about-mission-content h1 {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.about-mission-content p {
+
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: grey;
+}
+
+
+
+.about-features-container {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+.about-features-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #E8E8E8;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 20px;
+
+}
+
+.about-features-box img {
+    width: 60%;
+    object-fit: cover;
+}
+
+.about-features-box h3 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-family: 'Rosarivo', serif;
+    font-weight: 500;
+
+
+}
+
+.about-features-box p {
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+
+}
+
+
+
+
+.about-services-row {
+    margin-top: 80px;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #2e2e2e;
+}
+
+.about-services-column {
+    text-align: center;
+    padding: 20px;
+    width: 28%;
+}
+
+.about-services-column img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.about-services-column h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about-services-column p {
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+
+/*----------------------------responsive---------------------------------*/
+@media (max-width: 480px) {
+    .about-text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-text-container p {
+        font-size: 1.2rem;
+    }
+
+    .about-mission-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-mission-content p {
+        font-size: 14px;
+    }
+
+    .about-mission-content {
+        width: 90%;
+    }
+
+    .about-features-container {
+        margin-top: 50px;
+        flex-direction: column;
+
+    }
+
+    .about-features-box {
+        margin-bottom: 30px;
+
+    }
+
+
+
+
+    .about-services-row {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .about-services-column {
+        width: 80%;
+    }
+
+    .about-services-column h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-services-column p {
+        font-size: 13px;
+    }
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 601px) and (max-width: 960px) {
+    .about-features-container {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .about-features-box {
+
+        width: 210px;
+        height: 220px;
+
+        border-radius: 20px;
+
+    }
+
+    .about-features-box img {
+        width: 40%;
+        object-fit: cover;
+    }
+
+
+    .about-features-box h3 {
+        font-size: 0.8rem;
+
+
+
+    }
+
+    .about-features-box p {
+        font-size: 10px;
+    }
+
+
+
+    .about-services-column {
+        width: 80%;
+    }
+
+    .about-services-column h3 {
+        font-size: 0.8rem;
+    }
+
+    .about-services-column p {
+        font-size: 12px;
+    }
+
+    .about-services-column {
+        text-align: center;
+        padding: 20px;
+        width: 25%;
+    }
+
+    .about-services-column img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+
+
+
+
+}
+
+
+/*-------------------nest hub-------------------------*/
+@media screen and (device-width: 1024px) and (device-height: 600px) {
+    .about-features-box {
+
+        width: 210px;
+        height: 220px;
+
+        border-radius: 20px;
+
+    }
+
+    .about-features-box img {
+        width: 40%;
+        object-fit: cover;
+    }
+
+
+    .about-features-box h3 {
+        font-size: 0.8rem;
+
+
+
+    }
+
+    .about-features-box p {
+        font-size: 10px;
+    }
+
+
+}
