@@ -91,7 +91,7 @@ const Collection = () => {
                         </div>
                         <div className="content-section">
                             <h2>Aston Martin DB5</h2>
-                            <p>Price: $150,000</p>
+                            {/* <p>Price: $150,000</p> */}
                             <h4>DESCRIPTION</h4>
                             <p className='sale-card-des'>
                                 L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur

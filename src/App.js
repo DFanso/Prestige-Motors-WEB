@@ -8,6 +8,7 @@ import Collection from './components/Pages/Collection';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CarLearnMore from './components/Pages/Car-learn-more';
 import ScrollToTop from './components/Pages/ScrollToTop';
+import RestorationPage from './components/Pages/Restoration.js';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/collection' element={<Collection />} />
           <Route path='/car-learn-more' element={<CarLearnMore />} />
+          <Route path='/restoration' element={<RestorationPage />} />
         </Routes>
       </Router>
     </>
