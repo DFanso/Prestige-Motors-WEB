@@ -60,7 +60,7 @@ const RestorationPage = () => {
                                 L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
                                 automobile britannique Aston Martin.
                             </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn'>Apprendre Encore Plus</button></div>
+                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ const RestorationPage = () => {
                                 Avec des années d'expérience dans l'industrie et une connaissance approfondie des voitures classiques,
                                 notre équipe d'experts se consacre à vous guider à chaque étape du processus d'achat et de vente.
                             </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn'>Apprendre Encore Plus</button></div>
+                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
                         </div>
                     </div>
                     <div className="card-sec card-sec-margin">
@@ -95,7 +95,7 @@ const RestorationPage = () => {
                                 L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
                                 automobile britannique Aston Martin.
                             </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn'>Apprendre Encore Plus</button></div>
+                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
                         </div>
                     </div>
                 </div>
