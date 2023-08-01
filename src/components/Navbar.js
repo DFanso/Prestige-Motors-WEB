@@ -85,10 +85,18 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
+                            <Link to='/restoration' className='nav-links' onClick={handleNavLinkClick}>
+                                RESTAURATION
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
                             <Link to='/contact' className='nav-links' onClick={handleNavLinkClick}>
                                 CONTACTEZ-NOUS
                             </Link>
                         </li>
+
+
+
 
                     </ul>
 
