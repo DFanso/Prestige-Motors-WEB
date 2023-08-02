@@ -25,10 +25,10 @@ const RestorationPage = () => {
     }, []);
 
     const handleLearnMoreClick = (id) => {
-        navigate(`/car-learn-more/${id}`);
+        navigate(`/res-learn-more/${id}`);
     };
 
-    const chunk = (arr, size) => 
+    const chunk = (arr, size) =>
         Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
             arr.slice(i * size, i * size + size)
         );
@@ -59,10 +59,10 @@ const RestorationPage = () => {
                         {row.map((restoration, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                <LazyLoadImage src={restoration.pictures[1]}
-        style={{ height: '100%', width: '100%' }}
-        alt="Car for sale"
-      />
+                                    <LazyLoadImage src={restoration.pictures[1]}
+                                        style={{ height: '100%', width: '100%' }}
+                                        alt="Car for sale"
+                                    />
                                 </div>
                                 <div className="content-section">
                                     <h2>{restoration.carName}</h2>
@@ -71,7 +71,7 @@ const RestorationPage = () => {
                                         {restoration.smallDescription}
                                     </p>
                                     <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(restoration._id)}>Apprendre Encore Plus</button>
-</div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
