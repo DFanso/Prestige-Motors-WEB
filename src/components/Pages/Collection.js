@@ -21,8 +21,8 @@ const Collection = () => {
             });
     }, []);
 
-    const handleLearnMoreClick = () => {
-        navigate('/car-learn-more');
+    const handleLearnMoreClick = (id) => {
+        navigate(`/car-learn-more/${id}`);
     };
 
     const chunk = (arr, size) => 
@@ -64,7 +64,8 @@ const Collection = () => {
                                     <p className='sale-card-des'>
                                         {car.smallDescription}
                                     </p>
-                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(car._id)}>Apprendre Encore Plus</button>
+</div>
                                 </div>
                             </div>
                         ))}

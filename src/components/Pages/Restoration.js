@@ -13,7 +13,7 @@ const RestorationPage = () => {
 
     // Fetch the restoration data from the API when the component mounts
     useEffect(() => {
-        axios.get('http://localhost:3000/api/carForSale')
+        axios.get('http://localhost:3000/api/restoration')
             .then(res => {
                 setRestorations(res.data);
             })
@@ -22,8 +22,8 @@ const RestorationPage = () => {
             });
     }, []);
 
-    const handleLearnMoreClick = () => {
-        navigate('/car-learn-more');
+    const handleLearnMoreClick = (id) => {
+        navigate(`/car-learn-more/${id}`);
     };
 
     const chunk = (arr, size) => 
@@ -65,7 +65,8 @@ const RestorationPage = () => {
                                     <p className='sale-card-des'>
                                         {restoration.smallDescription}
                                     </p>
-                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(restoration._id)}>Apprendre Encore Plus</button>
+</div>
                                 </div>
                             </div>
                         ))}
