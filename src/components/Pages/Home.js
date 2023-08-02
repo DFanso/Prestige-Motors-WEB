@@ -1,16 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ImageSlider from './ImageSlider';
 import Footer from '../Footer';
 import './Home.css';
+import axios from 'axios';
+import LoadingScreen from 'react-loading-screen';
 
 
 
 const Home = () => {
     const navigate = useNavigate();
+    const [cars, setCars] = useState([]);
+    
+    const [loading, setLoading] = useState(true);
+    
 
-    const handleLearnMoreClick = () => {
-        navigate('/car-learn-more');
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/carForSale') // Replace with your API URL
+            .then(response => {
+                setCars(response.data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }, []);
+
+    const handleLearnMoreClick = (id) => {
+        navigate(`/car-learn-more/${id}`);
     };
 
     const handleViewMoreClick = () => {
@@ -20,6 +37,22 @@ const Home = () => {
 
     return (
         <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <ImageSlider />
             <div className='sale-container'>
                 <div className='sale-topic-container'>
@@ -27,81 +60,41 @@ const Home = () => {
                 </div>
 
                 <div className='all-cards all-card-row-margin'>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-4.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>1987 MGB Roadster</h2>
-                            <p>Price: $50,000</p>
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                Avec des années d'expérience dans l'industrie et une connaissance approfondie des voitures classiques,
-                                notre équipe d'experts se consacre à vous guider à chaque étape du processus d'achat et de vente.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-3.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>Aston Martin DB5</h2>
-                            <p>Price: $150,000</p>
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
-                                automobile britannique Aston Martin.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
+                {
+                        cars.slice(0, 2).map(car => (
+                            <div className="card-sec card-sec-margin" key={car.id}>
+                                <div className="image-section">
+                                    <img src={car.pictures[0]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                </div>
+                                <div className="content-section">
+                                    <h2>{car.carName}</h2>
+                                    <h4>DESCRIPTION</h4>
+                                    <p className='sale-card-des'>{car.smallDescription}</p>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(car._id)}>Apprendre Encore Plus</button></div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                    
                 </div>
-
-                <div className='all-cards all-card-row-margin-2'>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-5.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>1987 MGB Roadster</h2>
-                            <p>Price: $50,000</p>
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                Avec des années d'expérience dans l'industrie et une connaissance approfondie des voitures classiques,
-                                notre équipe d'experts se consacre à vous guider à chaque étape du processus d'achat et de vente.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-6.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>Aston Martin DB5</h2>
-                            <p>Price: $150,000</p>
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
-                                automobile britannique Aston Martin.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
+                <div className='all-cards all-card-row-margin'>
+                {
+                        cars.slice(2, 4).map(car => (
+                            <div className="card-sec card-sec-margin" key={car.id}>
+                                <div className="image-section">
+                                    <img src={car.pictures[0]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                </div>
+                                <div className="content-section">
+                                    <h2>{car.carName}</h2>
+                                    <h4>DESCRIPTION</h4>
+                                    <p className='sale-card-des'>{car.smallDescription}</p>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(car._id)}>Apprendre Encore Plus</button></div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                    
                 </div>
-
-
-
-
-
-
-
 
 
                 <div className='home-view-more-button'>
@@ -141,6 +134,8 @@ const Home = () => {
                 <Footer />
             </div>
         </div>
+                )}
+                </div>
     );
 };
 

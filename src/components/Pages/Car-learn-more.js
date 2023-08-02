@@ -3,27 +3,32 @@ import './Car-learn-more.css';
 import Footer from '../Footer';
 import { useParams, useNavigate, } from 'react-router-dom';
 import axios from 'axios';
+import LoadingScreen from 'react-loading-screen';
 
 
 const CarLearnMore = () => {
 
     const { id } = useParams();
-    console.log(id)
-    const [car, setCar] = useState(null);
-    const [bigImage, setBigImage] = useState();
 
-    useEffect(() => {
-        axios.get(`http://localhost:3000/api/carForSale/${id}`)
-            .then(res => {
-                setCar(res.data);
-                if (res.data.pictures && res.data.pictures.length > 0) {
-                    setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
-                }
-            })
-            .catch(err => {
-                console.error(err);
-            });
-    }, [id]);
+ console.log(id)
+ const [car, setCar] = useState(null);
+ const [bigImage, setBigImage] = useState();
+ const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+    axios.get(`http://localhost:3000/api/carForSale/${id}`)
+        .then(res => {
+            setCar(res.data);
+            if (res.data.pictures && res.data.pictures.length > 0) {
+                setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
+            }
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}, [id]);
+
 
     // Replace with the path to your big image
 
@@ -35,6 +40,22 @@ const CarLearnMore = () => {
     if (!car) return null;
     return (
         <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <div className="about-container">
                 <div className="about-content">
                     <img
@@ -102,6 +123,11 @@ const CarLearnMore = () => {
 
             <Footer />
         </div>
+
+                )
+}
+</div>
+        
     );
 };
 
