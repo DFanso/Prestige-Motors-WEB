@@ -11,13 +11,15 @@ const RestorationPage = () => {
 
     // Declare the state variable to hold the restoration data
     const [restorations, setRestorations] = useState([]);
+    const [loading, setLoading] = useState(true);
     console.log(restorations)
 
     // Fetch the restoration data from the API when the component mounts
     useEffect(() => {
-        axios.get('http://localhost:3000/api/carForSale')
+        axios.get('http://localhost:3000/api/restoration')
             .then(res => {
                 setRestorations(res.data);
+                setLoading(false);
             })
             .catch(err => {
                 console.error(err);
@@ -34,7 +36,24 @@ const RestorationPage = () => {
         );
 
     return (
+        
         <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <div className="about-container">
                 <div className="about-content">
                     <img
@@ -80,6 +99,9 @@ const RestorationPage = () => {
 
             </div>
             <Footer />
+            </div>
+            
+            )}
         </div>
     );
 };
