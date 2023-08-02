@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Restoration.css';
-import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
+import { useNavigate } from 'react-router-dom';
 
 const RestorationPage = () => {
     const navigate = useNavigate();
 
+    // Declare the state variable to hold the restoration data
+    const [restorations, setRestorations] = useState([]);
+    console.log(restorations)
+
+    // Fetch the restoration data from the API when the component mounts
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/carForSale')
+            .then(res => {
+                setRestorations(res.data);
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }, []);
+
     const handleLearnMoreClick = () => {
         navigate('/car-learn-more');
     };
+
+    const chunk = (arr, size) => 
+        Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+            arr.slice(i * size, i * size + size)
+        );
+
     return (
         <div>
             <div className="about-container">
@@ -30,80 +52,30 @@ const RestorationPage = () => {
                     <div className='h1-sale'><h1 className='sale-topic'>RESTAURATION</h1></div>
                 </div>
 
-                <div className='all-cards all-card-row-margin'>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-4.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>1961 JAGUAR E TYPE</h2>
-                            {/* <p>Price: $50,000</p> */}
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                Avec des années d'expérience dans l'industrie et une connaissance approfondie des voitures classiques,
-                                notre équipe d'experts se consacre à vous guider à chaque étape du processus d'achat et de vente.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
+                {chunk(restorations, 2).map((row, index) => (
+                    <div key={index} className='all-cards all-card-row-margin'>
+                        {row.map((restoration, index) => (
+                            <div key={index} className="card-sec card-sec-margin">
+                                <div className="image-section">
+                                    <img src={restoration.pictures[1]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                </div>
+                                <div className="content-section">
+                                    <h2>{restoration.carName}</h2>
+                                    <h4>DESCRIPTION</h4>
+                                    <p className='sale-card-des'>
+                                        {restoration.smallDescription}
+                                    </p>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-3.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>Aston Martin DB5</h2>
-                            {/* <p>Price: $150,000</p> */}
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
-                                automobile britannique Aston Martin.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='all-cards all-card-row-margin-2 restoration-row-margin'>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-5.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>1987 MGB Roadster</h2>
-                            {/* <p>Price: $50,000</p> */}
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                Avec des années d'expérience dans l'industrie et une connaissance approfondie des voitures classiques,
-                                notre équipe d'experts se consacre à vous guider à chaque étape du processus d'achat et de vente.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
-                    <div className="card-sec card-sec-margin">
-                        <div className="image-section">
-                            {/* Replace 'image-url.jpg' with the URL of the car image */}
-                            <img src="/images/sale-card-6.jpg" alt="Car for sale" style={{ height: '100%', width: '100%' }} />
-                        </div>
-                        <div className="content-section">
-                            <h2>Aston Martin DB5</h2>
-                            {/* <p>Price: $150,000</p> */}
-                            <h4>DESCRIPTION</h4>
-                            <p className='sale-card-des'>
-                                L'Aston Martin DB5 est une voiture de grand tourisme de luxe légendaire produite par le constructeur
-                                automobile britannique Aston Martin.
-                            </p>
-                            <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
-                        </div>
-                    </div>
-                </div>
+                ))}
 
             </div>
             <Footer />
         </div>
     );
-}
+};
 
 export default RestorationPage;
