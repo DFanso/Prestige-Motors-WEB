@@ -4,19 +4,22 @@ import ImageSlider from './ImageSlider';
 import Footer from '../Footer';
 import './Home.css';
 import axios from 'axios';
+import LoadingScreen from 'react-loading-screen';
 
 
 
 const Home = () => {
     const navigate = useNavigate();
     const [cars, setCars] = useState([]);
-
+    
+    const [loading, setLoading] = useState(true);
     
 
     useEffect(() => {
         axios.get('http://localhost:3000/api/carForSale') // Replace with your API URL
             .then(response => {
                 setCars(response.data);
+                setLoading(false);
             })
             .catch(err => {
                 console.error(err);
@@ -30,6 +33,22 @@ const Home = () => {
 
     return (
         <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <ImageSlider />
             <div className='sale-container'>
                 <div className='sale-topic-container'>
@@ -73,15 +92,6 @@ const Home = () => {
                     
                 </div>
 
-                
-
-
-
-
-
-
-
-
 
                 <div className='home-view-more-button'>
                     <button className="view-more view-more-card-end">VOIR PLUS</button>
@@ -120,6 +130,8 @@ const Home = () => {
                 <Footer />
             </div>
         </div>
+                )}
+                </div>
     );
 };
 
