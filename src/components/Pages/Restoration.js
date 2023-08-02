@@ -3,6 +3,8 @@ import axios from 'axios';
 import './Restoration.css';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const RestorationPage = () => {
     const navigate = useNavigate();
@@ -13,7 +15,7 @@ const RestorationPage = () => {
 
     // Fetch the restoration data from the API when the component mounts
     useEffect(() => {
-        axios.get('http://localhost:3000/api/restoration')
+        axios.get('http://localhost:3000/api/carForSale')
             .then(res => {
                 setRestorations(res.data);
             })
@@ -57,7 +59,10 @@ const RestorationPage = () => {
                         {row.map((restoration, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                    <img src={restoration.pictures[1]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                <LazyLoadImage src={restoration.pictures[1]}
+        style={{ height: '100%', width: '100%' }}
+        alt="Car for sale"
+      />
                                 </div>
                                 <div className="content-section">
                                     <h2>{restoration.carName}</h2>

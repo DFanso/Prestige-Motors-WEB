@@ -4,6 +4,7 @@ import './Collection.css';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
 import LoadingScreen from 'react-loading-screen';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Collection = () => {
 
@@ -76,7 +77,12 @@ const Collection = () => {
                         {row.map((car, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                    <img src={car.pictures[1]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                  
+                                    <LazyLoadImage src={car.pictures[1]}
+        style={{ height: '100%', width: '100%' }}
+        alt="Car for sale"
+      />
+
                                 </div>
                                 <div className="content-section">
                                     <h2>{car.carName}</h2>
