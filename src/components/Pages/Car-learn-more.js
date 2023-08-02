@@ -8,24 +8,24 @@ import axios from 'axios';
 const CarLearnMore = () => {
 
     const { id } = useParams();
- console.log(id)
- const [car, setCar] = useState(null);
- const [bigImage, setBigImage] = useState();
+    console.log(id)
+    const [car, setCar] = useState(null);
+    const [bigImage, setBigImage] = useState();
 
-useEffect(() => {
-    axios.get(`http://localhost:3000/api/carForSale/${id}`)
-        .then(res => {
-            setCar(res.data);
-            if (res.data.pictures && res.data.pictures.length > 0) {
-                setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
-            }
-        })
-        .catch(err => {
-            console.error(err);
-        });
-}, [id]);
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/carForSale/${id}`)
+            .then(res => {
+                setCar(res.data);
+                if (res.data.pictures && res.data.pictures.length > 0) {
+                    setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
+                }
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }, [id]);
 
-     // Replace with the path to your big image
+    // Replace with the path to your big image
 
     const handleSmallImageClick = (image) => {
         setBigImage(image);
@@ -53,8 +53,7 @@ useEffect(() => {
             <div className='car-learn-more-bg-con'>
                 <div className="car-learn-more">
                     <div className="car-left-column">
-                        <h1>{car.carName}</h1>  
-                        <h1 className='car-learn-more-brand-h'>E TYPE</h1>
+                        <h1>{car.carName}</h1>
                         <div className='car-learn-more-call-box'><p className='car-learn-more-call-p'>CALL FOR PRICE</p></div>
                         <div className='car-learn-more-call-num-box'><p>04-93-58-11-87</p></div>
                         <div className="rectangle-box">
