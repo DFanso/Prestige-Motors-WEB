@@ -3,21 +3,25 @@ import axios from 'axios';
 import './Collection.css';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
 
 const Collection = () => {
 
     const navigate = useNavigate();
 
     const [cars, setCars] = useState([]);
+    const [loading, setLoading] = useState(true);
     console.log(cars)
 
     useEffect(() => {
         axios.get('http://localhost:3000/api/carForSale')
             .then(res => {
                 setCars(res.data);
+                setLoading(false);  // Set loading to false when data is fetched
             })
             .catch(err => {
                 console.error(err);
+                setLoading(false);  // Also set loading to false if there is an error
             });
     }, []);
 
@@ -30,8 +34,24 @@ const Collection = () => {
             arr.slice(i * size, i * size + size)
         );
 
-    return (
-        <div>
+        return (
+            <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <div className="about-container">
                 <div className="about-content">
                     <img
@@ -75,7 +95,9 @@ const Collection = () => {
                 <Footer />
             </div>
         </div>
-    );
-};
+                )}
+            </div>
+        );
+    };
 
 export default Collection;
