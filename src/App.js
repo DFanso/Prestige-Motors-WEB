@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CarLearnMore from './components/Pages/Car-learn-more';
 import ScrollToTop from './components/Pages/ScrollToTop';
 import RestorationPage from './components/Pages/Restoration.js';
+import ResLearnMore from './components/Pages/res-learn-more';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/collection' element={<Collection />} />
           <Route path='/car-learn-more/:id' element={<CarLearnMore />} />
+          <Route path='/res-learn-more/:id' element={<ResLearnMore />} />
           <Route path='/restoration' element={<RestorationPage />} />
         </Routes>
       </Router>
