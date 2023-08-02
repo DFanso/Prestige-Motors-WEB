@@ -3,6 +3,8 @@ import axios from 'axios';
 import './Restoration.css';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const RestorationPage = () => {
     const navigate = useNavigate();
@@ -22,8 +24,8 @@ const RestorationPage = () => {
             });
     }, []);
 
-    const handleLearnMoreClick = () => {
-        navigate('/car-learn-more');
+    const handleLearnMoreClick = (id) => {
+        navigate(`/car-learn-more/${id}`);
     };
 
     const chunk = (arr, size) => 
@@ -57,7 +59,10 @@ const RestorationPage = () => {
                         {row.map((restoration, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                    <img src={restoration.pictures[1]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                <LazyLoadImage src={restoration.pictures[1]}
+        style={{ height: '100%', width: '100%' }}
+        alt="Car for sale"
+      />
                                 </div>
                                 <div className="content-section">
                                     <h2>{restoration.carName}</h2>
@@ -65,7 +70,8 @@ const RestorationPage = () => {
                                     <p className='sale-card-des'>
                                         {restoration.smallDescription}
                                     </p>
-                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(restoration._id)}>Apprendre Encore Plus</button>
+</div>
                                 </div>
                             </div>
                         ))}

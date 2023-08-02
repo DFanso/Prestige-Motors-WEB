@@ -3,26 +3,31 @@ import axios from 'axios';
 import './Collection.css';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
+import LoadingScreen from 'react-loading-screen';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Collection = () => {
 
     const navigate = useNavigate();
 
     const [cars, setCars] = useState([]);
+    const [loading, setLoading] = useState(true);
     console.log(cars)
 
     useEffect(() => {
         axios.get('http://localhost:3000/api/carForSale')
             .then(res => {
                 setCars(res.data);
+                setLoading(false);  // Set loading to false when data is fetched
             })
             .catch(err => {
                 console.error(err);
+                setLoading(false);  // Also set loading to false if there is an error
             });
     }, []);
 
-    const handleLearnMoreClick = () => {
-        navigate('/car-learn-more');
+    const handleLearnMoreClick = (id) => {
+        navigate(`/car-learn-more/${id}`);
     };
 
     const chunk = (arr, size) => 
@@ -30,8 +35,24 @@ const Collection = () => {
             arr.slice(i * size, i * size + size)
         );
 
-    return (
-        <div>
+        return (
+            <div>
+                {loading ? (
+                    <div><LoadingScreen
+                    loading={true}
+                    bgColor='#f1f1f1'
+                    spinnerColor='#9ee5f8'
+                    textColor='#676767'
+                    logoSrc='/images/logo.png'
+                    
+                  > 
+                    // ...
+                    // here loadable content
+                    // for example, async data
+                    //<div>Loadable content</div>
+                  </LoadingScreen></div>  // Loading screen
+                ) : (
+                    <div>
             <div className="about-container">
                 <div className="about-content">
                     <img
@@ -56,7 +77,12 @@ const Collection = () => {
                         {row.map((car, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                    <img src={car.pictures[1]} alt="Car for sale" style={{ height: '100%', width: '100%' }} />
+                                  
+                                    <LazyLoadImage src={car.pictures[1]}
+        style={{ height: '100%', width: '100%' }}
+        alt="Car for sale"
+      />
+
                                 </div>
                                 <div className="content-section">
                                     <h2>{car.carName}</h2>
@@ -64,7 +90,8 @@ const Collection = () => {
                                     <p className='sale-card-des'>
                                         {car.smallDescription}
                                     </p>
-                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={handleLearnMoreClick}>Apprendre Encore Plus</button></div>
+                                    <div className='btn-sale-card'><button className='sale-card-btn' onClick={() => handleLearnMoreClick(car._id)}>Apprendre Encore Plus</button>
+</div>
                                 </div>
                             </div>
                         ))}
@@ -74,7 +101,9 @@ const Collection = () => {
                 <Footer />
             </div>
         </div>
-    );
-};
+                )}
+            </div>
+        );
+    };
 
 export default Collection;
