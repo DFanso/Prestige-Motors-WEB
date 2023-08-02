@@ -13,6 +13,10 @@ const Home = () => {
         navigate('/car-learn-more');
     };
 
+    const handleViewMoreClick = () => {
+        navigate('/collection');
+    };
+
 
     return (
         <div>
@@ -101,7 +105,7 @@ const Home = () => {
 
 
                 <div className='home-view-more-button'>
-                    <button className="view-more view-more-card-end">VOIR PLUS</button>
+                    <button className="view-more view-more-card-end" onClick={handleViewMoreClick}>VOIR PLUS</button>
                 </div>
                 <div className="container-bar">
                     <div className="background-image">

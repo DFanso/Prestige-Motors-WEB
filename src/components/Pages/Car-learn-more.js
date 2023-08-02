@@ -54,6 +54,9 @@ useEffect(() => {
                 <div className="car-learn-more">
                     <div className="car-left-column">
                         <h1>{car.carName}</h1>  
+                        <h1 className='car-learn-more-brand-h'>E TYPE</h1>
+                        <div className='car-learn-more-call-box'><p className='car-learn-more-call-p'>CALL FOR PRICE</p></div>
+                        <div className='car-learn-more-call-num-box'><p>04-93-58-11-87</p></div>
                         <div className="rectangle-box">
                             <div className='rec-box-row-one'>
                                 <div className='rec-box-set-one'><p className="car-learn-more-bold-text">TRANSMISSION</p>
