@@ -16,7 +16,7 @@ const Home = () => {
     
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/carForSale') // Replace with your API URL
+        axios.get('https://api.prestigemotorsvence.com/api/carForSale') // Replace with your API URL
             .then(response => {
                 setCars(response.data);
                 setLoading(false);

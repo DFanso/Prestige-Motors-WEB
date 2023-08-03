@@ -16,7 +16,7 @@ const CarLearnMore = () => {
  const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-    axios.get(`http://localhost:3000/api/carForSale/${id}`)
+    axios.get(`https://api.prestigemotorsvence.com/api/carForSale/${id}`)
         .then(res => {
             setCar(res.data);
             if (res.data.pictures && res.data.pictures.length > 0) {
