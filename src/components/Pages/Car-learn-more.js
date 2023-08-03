@@ -10,24 +10,25 @@ const CarLearnMore = () => {
 
     const { id } = useParams();
 
-    console.log(id)
-    const [car, setCar] = useState(null);
-    const [bigImage, setBigImage] = useState();
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        axios.get(`http://localhost:3000/api/carForSale/${id}`)
-            .then(res => {
-                setCar(res.data);
-                if (res.data.pictures && res.data.pictures.length > 0) {
-                    setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
-                }
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error(err);
-            });
-    }, [id]);
+ console.log(id)
+ const [car, setCar] = useState(null);
+ const [bigImage, setBigImage] = useState();
+ const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+    axios.get(`https://api.prestigemotorsvence.com/api/carForSale/${id}`)
+        .then(res => {
+            setCar(res.data);
+            if (res.data.pictures && res.data.pictures.length > 0) {
+                setBigImage(res.data.pictures[1]); // set first image from the API as the bigImage
+            }
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}, [id]);
 
 
     // Replace with the path to your big image

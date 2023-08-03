@@ -16,7 +16,7 @@ const RestorationPage = () => {
 
     // Fetch the restoration data from the API when the component mounts
     useEffect(() => {
-        axios.get('http://localhost:3000/api/restoration')
+        axios.get('https://api.prestigemotorsvence.com/api/restoration')
             .then(res => {
                 setRestorations(res.data);
                 setLoading(false);
