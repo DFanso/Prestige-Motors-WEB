@@ -15,7 +15,7 @@ const Collection = () => {
     console.log(cars)
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/carForSale')
+        axios.get('https://api.prestigemotorsvence.com/api/carForSale')
             .then(res => {
                 setCars(res.data);
                 setLoading(false);  // Set loading to false when data is fetched
