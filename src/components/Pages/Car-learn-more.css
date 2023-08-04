@@ -108,6 +108,7 @@
 }
 
 .car-learn-more-call-p {
+    padding: 5px;
     font-weight: lighter;
     font-family: 'Roboto', sans-serif;
 }
@@ -292,6 +293,10 @@
 @media (max-width: 912px) {
 
     /*820*/
+    .car-learn-more-call-p {
+        font-size: 15px;
+    }
+
     .car-learn-more {
         display: flex;
         flex-direction: column;
@@ -318,6 +323,8 @@
     }
 
     .car-learn-more .rectangle-box {
+        display: flex;
+        flex-direction: column;
         width: 300px;
         margin-bottom: 20px;
     }

@@ -67,9 +67,8 @@
 
  .card-sec {
      display: flex;
-     width: 50%;
+     width: 60%;
      height: 300px;
-
      border: 1px solid #ccc;
      border-radius: 8px;
      background-color: #14141C;
@@ -99,7 +98,7 @@
  }
 
  .image-section {
-     flex: 2;
+     flex: 2.5;
      height: 100%;
  }
 
@@ -224,8 +223,6 @@
      .card-sec {
          height: auto;
          width: auto;
-
-
      }
 
      .image-section {
@@ -286,5 +283,26 @@
      .container-bar {
          margin-top: 30px;
      }
+
+ }
+
+
+
+ @media (min-width: 961px) and (max-width: 1366px) {
+     .card-sec {
+         display: flex;
+         width: 60%;
+         height: auto;
+
+     }
+
+     .image-section {
+         flex: 2;
+         height: auto;
+     }
+
+
+
+
 
  }
