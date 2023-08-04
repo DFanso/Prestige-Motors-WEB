@@ -24,7 +24,7 @@ const ContactUs = () => {
 
         try {
             
-            const response = await axios.post('http://localhost:3000/api/emailSend', formData);
+            const response = await axios.post('https://api.prestigemotorsvence.com/api/emailSend', formData);
             setLoading(false);
             console.log(response.data);
             alert(response.data.message)
