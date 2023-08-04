@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
+import axios from 'axios';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import Footer from '../Footer';
+import ReactLoading from 'react-loading';
 
 const ContactUs = () => {
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        telephone: '',
+        message: '',
+    });
+
+    const handleChange = (event) => {
+        setFormData({...formData, [event.target.id]: event.target.value});
+    };
+
+    const handleSubmit = async (event) => {
+        setLoading(true);
+        event.preventDefault();
+
+        try {
+            
+            const response = await axios.post('http://localhost:3000/api/emailSend', formData);
+            setLoading(false);
+            console.log(response.data);
+            alert(response.data.message)
+            // TODO: handle success (e.g., clear the form, show a success message, etc.)
+        } catch (error) {
+            console.error(error);
+            setLoading(false);
+            alert(response.data.message)
+            // TODO: handle error (e.g., show an error message, etc.)
+        }
+    };
+
     return (
         <div>
-
             <div className="about-container">
                 <div className="about-content">
                     <img
@@ -21,7 +53,12 @@ const ContactUs = () => {
                 </div>
             </div>
 
-            <div className="contact-us-container">
+            {loading ? (
+                <div className="loading-container">
+                    <ReactLoading type={"spin"} color={"#000"} />
+                </div>
+            ) : (
+                <div className="contact-us-container">
                 {/* Left Section */}
                 <div className="contact-us-left-section">
                     <img src="/images/contact-form.jpg" alt="Contact Image" />
@@ -43,27 +80,28 @@ const ContactUs = () => {
                         <h1>Envoyez votre message</h1>
                         <p>Contactez-nous</p>
                     </div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="name">Nom</label>
-                            <input type="text" id="name" />
+                            <input type="text" id="name" value={formData.name} onChange={handleChange} />
                         </div>
                         <div>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" id="email" />
+                            <input type="email" id="email" value={formData.email} onChange={handleChange} />
                         </div>
                         <div>
                             <label htmlFor="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" />
+                            <input type="tel" id="telephone" value={formData.telephone} onChange={handleChange} />
                         </div>
                         <div>
                             <label htmlFor="message">Message</label>
-                            <textarea id="message" rows="4" />
+                            <textarea id="message" rows="4" value={formData.message} onChange={handleChange} />
                         </div>
                         <div className='contact-form-btn'><button type="submit">Envoyer le message</button></div>
                     </form>
                 </div>
             </div>
+            )}
 
             <Footer />
         </div>
