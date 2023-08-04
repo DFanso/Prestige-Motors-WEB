@@ -78,7 +78,7 @@ const RestorationPage = () => {
                         {row.map((restoration, index) => (
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
-                                    <LazyLoadImage src={restoration.pictures[1]}
+                                    <LazyLoadImage src={restoration.pictures[0]}
                                         style={{ height: '100%', width: '100%' }}
                                         alt="Car for sale"
                                     />

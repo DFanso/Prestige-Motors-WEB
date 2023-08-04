@@ -78,7 +78,7 @@ const Collection = () => {
                             <div key={index} className="card-sec card-sec-margin">
                                 <div className="image-section">
                                   
-                                    <LazyLoadImage src={car.pictures[1]}
+                                    <LazyLoadImage src={car.pictures[0]}
         style={{ height: '100%', width: '100%' }}
         alt="Car for sale"
       />
