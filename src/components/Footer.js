@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css'; // Create a CSS file Footer.css and link it here
+// import '../../public/sitemap.html';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
@@ -40,6 +41,9 @@ const Footer = () => {
                 {/* <hr className="footer-line" /> */}
             </div>
             <p className="footer-rights">© 2023 Prestige Motors, Tous droits réservés.</p>
+
+
+            <a href="/sitemap.html"></a>
         </footer>
     );
 }
