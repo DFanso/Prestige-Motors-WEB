@@ -43,7 +43,7 @@ const Footer = () => {
             <p className="footer-rights">© 2023 Prestige Motors, Tous droits réservés.</p>
 
 
-            <a href="/sitemap.html"></a>
+            <a href="/sitemap.xml"></a>
         </footer>
     );
 }

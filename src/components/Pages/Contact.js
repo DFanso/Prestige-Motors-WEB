@@ -32,7 +32,7 @@ const ContactUs = () => {
         } catch (error) {
             console.error(error);
             setLoading(false);
-            alert(response.data.message)
+            alert('an error occurred!')
             // TODO: handle error (e.g., show an error message, etc.)
         }
     };
