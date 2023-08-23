@@ -7,17 +7,17 @@ const ImageSlider = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const images = [
         {
-            url: '/images/slide-8.jpg',
+            url: '/images/new-home-slider-3.jpg',
             heading: 'TOUJOURS À VOS CÔTÉS',
             text: 'RESTAURATION ACHAT ET VENTE DE VEHICULE ANCIEN',
         },
         {
-            url: '/images/slide-6.jpg',
+            url: '/images/new-home-slider-2.jpg',
             heading: 'LE PARADIS DES ANCIENS',
             text: 'RESTAURATION ACHAT ET VENTE DE VEHICULE ANCIEN',
         },
         {
-            url: '/images/slide-4.jpg',
+            url: '/images/new-home-slider-4.jpg',
             heading: 'RESTAURATION ET ENTRETIEN',
             text: 'RESTAURATION ACHAT ET VENTE DE VEHICULE ANCIEN',
         },
