@@ -113,3 +113,8 @@
 .footer-column h3 {
     font-size: 18px;
 }
+
+.social-color-href {
+    text-decoration: none;
+    color: #000;
+}

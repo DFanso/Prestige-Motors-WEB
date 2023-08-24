@@ -56,8 +56,8 @@ function Navbar() {
                     </div>
                     <div className="social-icons">
                         <FaInstagram size={24} className="icon" />
-                        <FaFacebook size={24} className="icon" />
-                        <FaTwitter size={24} className="icon" />
+                        <a className='social-color-href' href="https://www.facebook.com/profile.php?id=100009761925051"><FaFacebook size={24} className="icon" /></a>
+                        {/* <FaTwitter size={24} className="icon" /> */}
                     </div>
                 </div>
             </div>

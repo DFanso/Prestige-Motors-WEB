@@ -35,15 +35,13 @@ const Footer = () => {
                 <p>Suivez-nous pour plus de contenu exclusif</p>
                 <div className="social-icons">
                     <FaInstagram size={24} className="icon" /> {/* Adjust the size in pixels as needed */}
-                    <FaFacebook size={24} className="icon" />
-                    <FaTwitter size={24} className="icon" />
+                    <a className='social-color-href' href="https://www.facebook.com/profile.php?id=100009761925051"> <FaFacebook size={24} className="icon" /></a>
+                    {/* <FaTwitter size={24} className="icon" /> */}
                 </div>
                 {/* <hr className="footer-line" /> */}
             </div>
             <p className="footer-rights">© 2023 Prestige Motors, Tous droits réservés.</p>
-
-
-            <a href="/sitemap.xml"></a>
+            <a href="/sitemap.html"></a>
         </footer>
     );
 }
