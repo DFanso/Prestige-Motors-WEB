@@ -64,7 +64,10 @@ const RestorationPage = () => {
                         className="about-image"
                     /> */}
 
+
                             {/* <div className="about-text-container">
+
+
                                 <h1>RESTAURATION</h1>
                                 <div className='about-oncover-p'><p>FAIRE REVIVRE AUX AUTOMOBILES D'ÉPOQUE LEUR SPLENDEUR D'ORIGINE.</p></div>
                             </div> */}
