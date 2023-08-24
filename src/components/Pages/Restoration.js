@@ -39,6 +39,7 @@ const RestorationPage = () => {
     return (
 
         <div>
+            
             {loading ? (
                 <div><LoadingScreen
                     loading={true}
@@ -56,13 +57,9 @@ const RestorationPage = () => {
             ) : (
                 <div>
                     <div className="about-container">
-                        <ResImageSlider />
+                        
                         <div className="about-content">
-                            {/* <img
-                        src="/images/res-cover.jpg"
-                        alt="Sample Image"
-                        className="about-image"
-                    /> */}
+                            {<ResImageSlider />}
 
                             <div className="about-text-container">
                                 <h1>RESTAURATION</h1>
