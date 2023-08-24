@@ -1,7 +1,7 @@
 // ImageSlider.js
 
 import React, { useState, useEffect } from 'react';
-import './ImageSlider.css'; // Create a CSS file for styling the image slider
+import './res-sliderr.css'; // Create a CSS file for styling the image slider
 
 const ResImageSlider = () => {
     const [currentImage, setCurrentImage] = useState(0);
