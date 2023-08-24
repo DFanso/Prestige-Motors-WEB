@@ -27,6 +27,7 @@ const Footer = () => {
                 <div className="footer-column">
                     <h3>Contactez-nous</h3>
                     <p>prestigevence@gmail.com</p>
+                    <p>1330 chemin de vosgelade 06140 vence</p>
                     <p>04.93.58.11.87</p>
                 </div>
             </div>
