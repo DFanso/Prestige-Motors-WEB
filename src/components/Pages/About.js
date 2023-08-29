@@ -14,7 +14,7 @@ const About = () => {
                         className="about-image"
                     />
                     <div className="about-text-container">
-                        <h1>PRESTIGE MOTORS</h1>
+                        <h1>PRESTIGE MOTOR'S</h1>
                         <div className='about-oncover-p'><p>QUAND LE VINTAGE RENCONTRE LE PRESTIGE</p></div>
                     </div>
                 </div>
@@ -54,12 +54,12 @@ const About = () => {
                 <div className="about-services-column">
                     <img src="/images//service-2.png" alt="Sample Image 2" />
                     <h3>Service client exceptionnel</h3>
-                    <p>Chez Prestige Motors, nous sommes fiers d'offrir un service client exceptionnel. Notre équipe dédiée d'experts automobiles est là pour vous fournir une assistance personnalisée. Faites confiance à notre savoir-faire et à notre expérience</p>
+                    <p>Chez Prestige Motor's, nous sommes fiers d'offrir un service client exceptionnel. Notre équipe dédiée d'experts automobiles est là pour vous fournir une assistance personnalisée. Faites confiance à notre savoir-faire et à notre expérience</p>
                 </div>
                 <div className="about-services-column">
                     <img src="/images//service-3.png" alt="Sample Image 3" />
                     <h3>Entreprise digne de confiance</h3>
-                    <p>Chez Prestige Motors, nous privilégions la confiance et la fiabilité dans chaque transaction. Nous avons mis en place des processus de vérification robustes pour nous assurer que tous les vendeurs et toutes les annonces respectent nos normes strictes.</p>
+                    <p>Chez Prestige Motor's, nous privilégions la confiance et la fiabilité dans chaque transaction. Nous avons mis en place des processus de vérification robustes pour nous assurer que tous les vendeurs et toutes les annonces respectent nos normes strictes.</p>
                 </div>
             </div>
             <Footer />

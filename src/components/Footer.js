@@ -11,7 +11,7 @@ const Footer = () => {
                     <img src="/images/logo.png" alt="Logo" />
                 </div>
                 <div className="footer-column">
-                    <h3>Prestige Motors</h3>
+                    <h3>Prestige Motor's</h3>
                     <ul>
                         <li><a href="#">Page d'accueil</a></li>
                         <li><a href="#">À propos</a></li>
@@ -41,7 +41,7 @@ const Footer = () => {
                 </div>
                 {/* <hr className="footer-line" /> */}
             </div>
-            <p className="footer-rights">© 2023 Prestige Motors, Tous droits réservés.</p>
+            <p className="footer-rights">© 2023 Prestige Motor's, Tous droits réservés.</p>
             <a href="/sitemap.html"></a>
         </footer>
     );
